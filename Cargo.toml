@@ -1,0 +1,9 @@
+[package]
+name = "calculator"
+version = "0.1.0"
+authors = ["Scott Cooper <scott.cooper2@mail.mcgill.ca>"]
+license = "MIT/Apache-2.0"
+
+[dependencies.nom]
+version = "~1.2.2"
+features = ["core"]
