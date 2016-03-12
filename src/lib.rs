@@ -19,3 +19,16 @@ mod std {
         pub use core::prelude as v1;
     }
 }
+
+pub fn parse_line<T>(line : T) -> Option<i64> where T : AsRef<str>{
+    let s = line.as_ref();
+    if let nom::IResult::Done(left, res) = parser::line(s.as_bytes()) {
+        if left.len() == 0 {
+            Some(res)
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
